@@ -32,28 +32,33 @@ var createNewTaskElement=function(taskString){
   var deleteButton=document.createElement("button");//delete button
   var deleteButtonImg=document.createElement("img");//delete button image
 
-  listItem.classList.add('li');
+  listItem.classList.add('item');
 
   label.innerText=taskString;
   label.className='task';
-  label.classList.add('label');
+  // label.classList.add('label');
+  label.classList.add('item__label');
 
   //Each elements, needs appending
   checkBox.type="checkbox";
   checkBox.classList.add('input');
-  checkBox.classList.add('checkbox');
+  checkBox.classList.add('item__checkbox');
   editInput.type="text";
   editInput.className="task";
-  editInput.classList.add('input');
+  // editInput.classList.add('input');
+  editInput.classList.add('item__text');
+  // editInput.classList.add('task-row-wrapper__task');
 
   editButton.innerText="Edit"; //innerText encodes special characters, HTML does not.
   editButton.className="edit";
-  editButton.classList.add('button');
+  // editButton.classList.add('button');
+  editButton.classList.add('item__edit');
 
   deleteButton.className="delete";
-  deleteButton.classList.add('button');
+  // deleteButton.classList.add('button');
+  deleteButton.classList.add('item__delete');
   deleteButtonImg.src='./remove.svg';
-  deleteButtonImg.classList.add('img-delete');
+  deleteButtonImg.classList.add('item__img-delete');
   deleteButton.appendChild(deleteButtonImg);
 
 
@@ -94,7 +99,7 @@ var editTask=function(){
   var editInput=listItem.querySelector('input[type=text]');
   var label=listItem.querySelector("label");
   var editBtn=listItem.querySelector(".edit");
-  var containsClass=listItem.classList.contains("edit-mode");
+  var containsClass=listItem.classList.contains("item_edit-mode");
   //If class of the parent is .edit-mode
   if(containsClass){
 
@@ -108,7 +113,7 @@ var editTask=function(){
   }
 
   //toggle .edit-mode on the parent.
-  listItem.classList.toggle("edit-mode");
+  listItem.classList.toggle("item_edit-mode");
 };
 
 
