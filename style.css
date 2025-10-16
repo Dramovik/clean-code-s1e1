@@ -18,8 +18,8 @@
 }
 
 @media (max-width:768px) {
-.title { text-align: center;
-}
+  .title { text-align: center;
+  }
 }
 .bounding-container {
   display: block;
